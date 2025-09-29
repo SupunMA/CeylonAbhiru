@@ -453,19 +453,7 @@
   .gallery-wrapper::-webkit-scrollbar-thumb:hover {
     background: var(--green-dark);
   }
-  @media (max-width: 768px) {
-    .gallery-container {
-      padding: 0;
-    }
-    .gallery-nav {
-      display: none;
-    }
-    .gallery-item {
-      width: 280px;
-      height: 200px;
-    }
-  }
-
+  
   /* Why Choose Us Section */
   section.why-choose {
     padding: 4rem 1rem;
@@ -736,6 +724,92 @@
     }
     nav button.menu-toggle {
       display: block;
+    }
+
+    /* *************** MOBILE FIXES START *************** */
+    
+    /* About Section Stats Fix */
+    .about .stats {
+      flex-wrap: wrap; 
+      gap: 1.5rem; 
+    }
+    .about .stat {
+      flex-basis: calc(50% - 1rem); 
+      padding: 1rem;
+    }
+
+    /* Destinations Card Fix for Touch Devices */
+    .card .info p {
+      opacity: 1; 
+      transition: none; 
+    }
+    .card:hover .info p {
+      opacity: 1; 
+    }
+    .card .info {
+      padding: 0.75rem;
+    }
+
+    /* Gallery Adjustments */
+    .gallery-container {
+      padding: 0 0.5rem; 
+    }
+    .gallery-nav {
+      display: none;
+    }
+    .gallery-item {
+      width: 250px; /* Adjusted from 280px */
+      height: 180px; /* Adjusted from 200px */
+    }
+    .gallery-track {
+      padding: 0 0.5rem; /* Reduced inner padding */
+    }
+
+    /* Contact Info Alignment */
+    .contact-info div {
+      align-items: flex-start; 
+    }
+    .contact-info div span.icon {
+      font-size: 1.5rem; 
+      margin-top: 0.2rem;
+    }
+
+    /* *************** MOBILE FIXES END *************** */
+  }
+
+  @media (max-width: 480px) {
+    /* General Container Padding and Typography */
+    .container {
+      padding: 0 0.75rem; 
+    }
+    section {
+      padding: 3rem 0.5rem; /* Reduce overall section padding */
+    }
+    section h2 {
+      font-size: 2rem;
+    }
+    section p {
+      font-size: 1rem;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* About Section - Stack Stats on Tiny Screens */
+    .about .stat {
+      flex-basis: 100%; 
+    }
+
+    /* Why Choose Us - Allow smaller columns */
+    .features {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+      gap: 1.5rem;
+    }
+    .feature {
+      padding: 1.5rem 1rem;
     }
   }
 </style>
